@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
+  padding-bottom: 15em;
 }
 
 .site-logo {
@@ -24,11 +25,11 @@ header {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 2em 3em;
   -webkit-transition: background 250ms ease-in;
   transition: background 250ms ease-in;
@@ -65,7 +66,7 @@ header {
     height: 2px;
     background: currentColor;
     -webkit-transform: scaleX(0);
-            transform: scaleX(0);
+    transform: scaleX(0);
     -webkit-transition: -webkit-transform 150ms ease-in-out;
     transition: -webkit-transform 150ms ease-in-out;
     transition: transform 150ms ease-in-out;
@@ -74,7 +75,7 @@ header {
 
   &:hover::after {
     -webkit-transform: scaleX(1);
-            transform: scaleX(1);
+    transform: scaleX(1);
   }
 
   &--btn {
@@ -116,7 +117,7 @@ header {
 
   -webkit-box-shadow: 0 3px 20px rgba(black, 0.2);
 
-          box-shadow: 0 3px 20px rgba(black, 0.2);
+  box-shadow: 0 3px 20px rgba(black, 0.2);
 }
 
 .home-intro {
@@ -144,22 +145,53 @@ header {
   margin-left: 1.5em;
 }
 
+.fade-in {
+  opacity: 0;
+  -webkit-transition: opacity 0.25s ease-in;
+  transition: opacity 0.25s ease-in;
+}
+
+.fade-in.appear {
+  opacity: 1;
+}
+
 .more-stuff-grid {
   background: #f4f4f4;
   padding: 4em 0;
   display: grid;
   grid-gap: 2em;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   grid-template-columns: minmax(1em, 1fr) repeat(2, minmax(200px, 400px)) minmax(1em,
       1fr);
 }
 
 .from-left {
   grid-column: 2 / 3;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .from-right {
   grid-column: 3 / 4;
+  -webkit-transform: translateX(50%);
+  transform: translateX(50%);
+}
+
+.from-left,
+.from-right {
+  opacity: 0;
+  -webkit-transition: opacity 0.25s ease-in, -webkit-transform 0.4s ease-in;
+  transition: opacity 0.25s ease-in, -webkit-transform 0.4s ease-in;
+  transition: opacity 0.25s ease-in, transform 0.4s ease-in;
+  transition: opacity 0.25s ease-in, transform 0.4s ease-in, -webkit-transform 0.4s ease-in;
+
+}
+
+.from-left.appear,
+.from-right.appear {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
 }
