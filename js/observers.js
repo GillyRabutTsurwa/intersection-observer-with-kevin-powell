@@ -38,7 +38,7 @@ const appearOnScroll = new IntersectionObserver(function (entries, appearOnScrol
             appearOnScroll.unobserve(currentEntry.target); // to stop observing once observed
         }
     })
-}, optionsAppear)
+}, optionsAppear);
 
 // Souvenez-vous comment créer un observeur pour beaucoup d'éléments?
 DOM.faders.forEach((currentElement) => {
@@ -47,4 +47,4 @@ DOM.faders.forEach((currentElement) => {
 
 DOM.sliders.forEach((currentElement) => {
     appearOnScroll.observe(currentElement);
-})
+});
